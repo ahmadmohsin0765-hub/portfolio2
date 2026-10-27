@@ -22,7 +22,7 @@ The website is designed with an editorial aesthetic, refined typography, generou
 
 ```text
 portfolio/
-├── index.html       # Semantic HTML5 document structure, SEO, and Open Graph metadata
+├── portfolio.html   # Main semantic HTML5 portfolio document, SEO, and structure
 ├── style.css        # Vanilla CSS3 styling, design tokens, layout grids, and responsive rules
 ├── script.js        # Vanilla JavaScript: navigation, repo sync, calendar, and animations
 ├── assets/
@@ -36,22 +36,17 @@ portfolio/
 
 Because this project is built entirely with vanilla web standards (HTML5, CSS3, vanilla JavaScript), it requires **zero build steps, zero node modules, and zero compilation**.
 
-### Option 1: Python Built-in Server (Recommended)
+### Option 1: Python Built-in Server
 Open your terminal in the `portfolio/` directory and run:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000) in any web browser.
+Then visit [http://localhost:8000/portfolio.html](http://localhost:8000/portfolio.html) in any web browser.
 
-### Option 2: Node.js `npx serve`
-```bash
-npx serve .
-```
-
-### Option 3: Direct File Opening
-You can open `index.html` directly in your browser. (Note: Running via a local server like `python3 -m http.server` is recommended to allow the browser's `fetch()` API to make unauthenticated requests to GitHub).
+### Option 2: Direct File Opening
+You can open `portfolio.html` directly in your browser. (Note: Running via a local server like `python3 -m http.server` is recommended to allow the browser's `fetch()` API to make unauthenticated requests to GitHub).
 
 ---
 

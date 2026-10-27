@@ -1263,6 +1263,291 @@ button {
   line-height: 1.5;
 }
 
+/* --- Open Source & Kubernetes Roadmap Section --- */
+.oss-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.04);
+}
+
+.oss-banner {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(2rem, 4vw, 3.25rem);
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+.oss-target-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.oss-target-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1D4ED8;
+  background: #EFF6FF;
+  border: 1px solid #DBEAFE;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.oss-k8s-wheel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563EB;
+}
+
+.oss-card-title {
+  font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.oss-card-desc {
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.oss-meta-panel {
+  background: var(--surface-muted);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.oss-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.oss-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.oss-meta-val {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.oss-phase-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #B25E00;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #B25E00;
+  box-shadow: 0 0 0 0 rgba(178, 94, 0, 0.4);
+  animation: ossPulse 2s infinite;
+}
+
+@keyframes ossPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(178, 94, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(178, 94, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(178, 94, 0, 0);
+  }
+}
+
+.oss-roadmap {
+  padding: clamp(2rem, 4vw, 3.25rem);
+}
+
+.oss-roadmap-header {
+  margin-bottom: 1.75rem;
+}
+
+.oss-roadmap-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.oss-roadmap-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.oss-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.oss-step-card {
+  background: var(--surface-muted);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.oss-step-card:hover {
+  border-color: var(--accent-border);
+}
+
+.oss-step-card.active {
+  background: #FAFBF9;
+  border-color: var(--accent-border);
+  box-shadow: 0 6px 18px -6px rgba(73, 107, 80, 0.08);
+}
+
+.oss-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.oss-step-num {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--border);
+  line-height: 1;
+}
+
+.oss-step-card.active .oss-step-num {
+  color: var(--accent);
+}
+
+.oss-step-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--border-light);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.oss-step-badge.active {
+  background: #FFF4E5;
+  color: #B25E00;
+  font-weight: 600;
+}
+
+.oss-step-header {
+  margin-top: 0.15rem;
+}
+
+.oss-step-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.oss-step-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.oss-step-desc code {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--text);
+}
+
+.oss-step-milestone {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.81rem;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: auto;
+}
+
+.milestone-label {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.milestone-text {
+  color: var(--text);
+}
+
+.oss-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem clamp(2rem, 4vw, 3.25rem);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.oss-footer-hint {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.oss-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
 /* --- Contact Section --- */
 .contact-card {
   background: var(--surface);
@@ -1484,6 +1769,31 @@ button {
 
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+
+  .oss-banner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .oss-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .oss-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .oss-footer-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .oss-footer-actions .btn-primary,
+  .oss-footer-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-metadata {

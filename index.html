@@ -48,6 +48,7 @@
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#activity" class="nav-link">Activity</a></li>
           <li><a href="#toolkit" class="nav-link">Toolkit</a></li>
+          <li><a href="#open-source" class="nav-link">Open Source</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -202,9 +203,9 @@
             <div class="timeline-step" role="listitem">
               <div class="timeline-marker" aria-hidden="true">03</div>
               <div class="timeline-content">
-                <h3 class="timeline-title">The Next Chapter</h3>
-                <p class="timeline-desc">Building more substantive projects, contributing to collaborative repositories, and expanding technical capabilities across software disciplines.</p>
-                <span class="timeline-badge" style="background: #F1F1EE; color: #70716D;">Upcoming</span>
+                <h3 class="timeline-title">Open Source &amp; Systems</h3>
+                <p class="timeline-desc">Expanding into Go (Golang) and systems development, contributing actively to open-source software, and building toward upstream contributions in Kubernetes.</p>
+                <span class="timeline-badge" style="background: #EFF6FF; color: #1D4ED8;">Long-Term Goal</span>
               </div>
             </div>
           </div>
@@ -397,11 +398,151 @@
       </div>
     </section>
 
-    <!-- Section 05: Contact -->
+    <!-- Section 05: Open Source & Kubernetes Roadmap -->
+    <section id="open-source" class="section" aria-labelledby="oss-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">05 / OPEN SOURCE</span>
+          <h2 id="oss-heading" class="section-heading">Building in the open. The path to Kubernetes.</h2>
+          <p class="section-intro">
+            I believe the strongest software foundations are forged through collaborative, community-driven projects. My long-term engineering vision is focused on contributing to upstream cloud-native infrastructure, with Kubernetes as my target destination.
+          </p>
+        </div>
+
+        <!-- Open Source Main Card -->
+        <div class="oss-card reveal">
+          <div class="oss-banner">
+            <div class="oss-target-info">
+              <div class="oss-target-badge">
+                <span class="oss-k8s-wheel" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 17.93V18a1 1 0 0 0-2 0v1.93A8 8 0 0 1 4.07 13H6a1 1 0 0 0 0-2H4.07A8 8 0 0 1 11 4.07V6a1 1 0 0 0 2 0V4.07A8 8 0 0 1 19.93 11H18a1 1 0 0 0 0 2h1.93A8 8 0 0 1 13 19.93zM12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2z"/>
+                  </svg>
+                </span>
+                <span>Upstream Vision: Kubernetes (k8s)</span>
+              </div>
+              <h3 class="oss-card-title">Contributing to the foundation of modern cloud systems.</h3>
+              <p class="oss-card-desc">
+                Kubernetes orchestrates resilient distributed workloads across the world. Rather than treating massive open-source systems as black boxes, my goal is to demystify upstream engineering by systematically progressing from documentation and bug triage into core Special Interest Groups (SIGs).
+              </p>
+            </div>
+
+            <div class="oss-meta-panel">
+              <div class="oss-meta-item">
+                <span class="oss-meta-label">Ecosystem &amp; Foundation</span>
+                <span class="oss-meta-val">Cloud Native Computing Foundation (CNCF)</span>
+              </div>
+              <div class="oss-meta-item">
+                <span class="oss-meta-label">Target Special Interest Groups</span>
+                <span class="oss-meta-val">SIG ContribEx · SIG Docs · SIG Node</span>
+              </div>
+              <div class="oss-meta-item">
+                <span class="oss-meta-label">Core Technical Stack</span>
+                <span class="oss-meta-val">Go (Golang) · Linux / cgroups · Containers</span>
+              </div>
+              <div class="oss-meta-item">
+                <span class="oss-meta-label">Current Phase</span>
+                <span class="oss-meta-val oss-phase-tag">
+                  <span class="status-pulse-dot"></span>
+                  Phase 1: Systems &amp; Go Foundations
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3-Phase Action Roadmap -->
+          <div class="oss-roadmap">
+            <div class="oss-roadmap-header">
+              <h4 class="oss-roadmap-title">Contribution Roadmap</h4>
+              <span class="oss-roadmap-subtitle">From foundational systems literacy to active upstream pull requests</span>
+            </div>
+
+            <div class="oss-steps-grid">
+              <!-- Phase 1 -->
+              <div class="oss-step-card active">
+                <div class="oss-step-top">
+                  <span class="oss-step-num">01</span>
+                  <span class="oss-step-badge active">Active Focus</span>
+                </div>
+                <div class="oss-step-header">
+                  <h5 class="oss-step-heading">Core Systems &amp; Go Foundations</h5>
+                </div>
+                <p class="oss-step-desc">
+                  Building deep familiarity with Unix terminal workflows, Linux namespaces/cgroups, containerization basics (Docker/containerd), and mastering Go (Golang) fundamentals and concurrency patterns.
+                </p>
+                <div class="oss-step-milestone">
+                  <span class="milestone-label">Key Objective</span>
+                  <span class="milestone-text">Write Go CLI utilities &amp; deploy reproducible multi-node clusters locally with KinD.</span>
+                </div>
+              </div>
+
+              <!-- Phase 2 -->
+              <div class="oss-step-card">
+                <div class="oss-step-top">
+                  <span class="oss-step-num">02</span>
+                  <span class="oss-step-badge">Next Milestone</span>
+                </div>
+                <div class="oss-step-header">
+                  <h5 class="oss-step-heading">Upstream Literacy &amp; SIG Engagement</h5>
+                </div>
+                <p class="oss-step-desc">
+                  Joining the Kubernetes Slack community, attending public SIG ContribEx &amp; SIG Docs meetings, studying the k/k codebase guidelines, and triaging open documentation issues.
+                </p>
+                <div class="oss-step-milestone">
+                  <span class="milestone-label">Key Objective</span>
+                  <span class="milestone-text">Submit first merged upstream PRs in k/website and k/community repositories.</span>
+                </div>
+              </div>
+
+              <!-- Phase 3 -->
+              <div class="oss-step-card">
+                <div class="oss-step-top">
+                  <span class="oss-step-num">03</span>
+                  <span class="oss-step-badge">Long-Term Goal</span>
+                </div>
+                <div class="oss-step-header">
+                  <h5 class="oss-step-heading">Subproject Code &amp; Mentorship</h5>
+                </div>
+                <p class="oss-step-desc">
+                  Tackling verified <code>good-first-issue</code> and <code>help-wanted</code> bug tickets in Kubernetes subprojects, participating in release cycles, and applying for LFX Mentorship or GSoC.
+                </p>
+                <div class="oss-step-milestone">
+                  <span class="milestone-label">Key Objective</span>
+                  <span class="milestone-text">Achieve official Kubernetes Org Membership with peer-reviewed code contributions.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Links -->
+          <div class="oss-footer">
+            <div class="oss-footer-left">
+              <span class="oss-footer-hint">Explore the upstream Kubernetes project and contributor ecosystem:</span>
+            </div>
+            <div class="oss-footer-actions">
+              <a href="https://github.com/kubernetes/kubernetes" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                <span>kubernetes/kubernetes</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+              <a href="https://k8s.dev" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                <span>k8s Contributor Site</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+              <a href="https://github.com/ahmadmohsin0765-hub" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <span>Follow My GitHub</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 06: Contact -->
     <section id="contact" class="section" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">05 / CONTACT</span>
+          <span class="section-label">06 / CONTACT</span>
           <h2 id="contact-heading" class="section-heading">Good things start with a conversation.</h2>
         </div>
 

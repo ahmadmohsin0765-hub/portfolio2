@@ -23,16 +23,6 @@ const CONFIG = {
  */
 const VERIFIED_PROJECTS = [
   {
-    name: 'Go Green India',
-    isFeatured: true,
-    tag: 'Featured Project · Environmental Platform',
-    description: 'An interactive public-service tokenomics and eco-incentive platform designed around sustainable daily habits, green credit calculations, and community environmental awareness.',
-    technologies: ['HTML5', 'CSS3', 'JavaScript'],
-    repoUrl: 'https://github.com/ahmadmohsin0765-hub/go-green',
-    demoUrl: null, // Honest: demo will only be shown when a public hosted link is active
-    metrics: { label: 'Tokenomics Framework', value: '100 GP = ₹1' }
-  },
-  {
     name: 'Space Exploration Interface',
     isFeatured: false,
     description: 'A responsive space portal exploring mission logs, upcoming launches, and astronomy updates. Features custom orbital typography, semantic tab navigation, and clean CSS layouts.',
@@ -188,63 +178,49 @@ function renderProjects(projects) {
   const featuredContainer = document.getElementById('featured-project-container');
   const gridContainer = document.getElementById('projects-grid-container');
 
-  if (!featuredContainer || !gridContainer) return;
+  if (!gridContainer) return;
 
-  const featured = projects.find(p => p.isFeatured) || projects[0];
-  const regularProjects = projects.filter(p => p !== featured);
+  const featured = projects.find(p => p.isFeatured);
+  const regularProjects = featured ? projects.filter(p => p !== featured) : projects;
 
-  // Render Featured Project
-  featuredContainer.innerHTML = `
-    <article class="project-card-featured reveal">
-      <div class="featured-content">
-        <div>
-          <span class="featured-tag">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            ${escapeHtml(featured.tag || 'Featured Project')}
-          </span>
-          <h3 class="project-title">${escapeHtml(featured.name)}</h3>
-          <p class="project-desc">${escapeHtml(featured.description)}</p>
-          <ul class="project-tech-list" aria-label="Technologies used">
-            ${featured.technologies.map(t => `<li class="tech-tag">${escapeHtml(t)}</li>`).join('')}
-          </ul>
-        </div>
-        <div class="project-actions">
-          <a href="${escapeHtml(featured.repoUrl)}" class="btn-primary" target="_blank" rel="noopener noreferrer">
-            <span>View Source on GitHub</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-          ${featured.demoUrl ? `
-            <a href="${escapeHtml(featured.demoUrl)}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
-              <span>Live Demonstration</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          ` : ''}
-        </div>
-      </div>
-      <div class="featured-preview" aria-hidden="true">
-        <div class="preview-mockup">
-          <div class="mockup-header">
-            <span class="mockup-dot"></span>
-            <span class="mockup-dot"></span>
-            <span class="mockup-dot"></span>
+  // Render Featured Project if one exists and container is present
+  if (featured && featuredContainer) {
+    featuredContainer.style.display = 'block';
+    featuredContainer.innerHTML = `
+      <article class="project-card-featured reveal">
+        <div class="featured-content">
+          <div>
+            <span class="featured-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              ${escapeHtml(featured.tag || 'Featured Project')}
+            </span>
+            <h3 class="project-title">${escapeHtml(featured.name)}</h3>
+            <p class="project-desc">${escapeHtml(featured.description)}</p>
+            <ul class="project-tech-list" aria-label="Technologies used">
+              ${featured.technologies.map(t => `<li class="tech-tag">${escapeHtml(t)}</li>`).join('')}
+            </ul>
           </div>
-          <div class="mockup-body">
-            <span class="mockup-badge">National Registry Model</span>
-            <div class="mockup-title">🌱 Sustainable Tokenomics System</div>
-            <p style="font-size: 0.85rem; color: #70716D;">Direct conversion model for personal eco-actions into verifiable green rewards.</p>
-            ${featured.metrics ? `
-              <div class="mockup-metric">
-                <span class="metric-num">${escapeHtml(featured.metrics.value)}</span>
-                <span class="metric-label">${escapeHtml(featured.metrics.label)}</span>
-              </div>
+          <div class="project-actions">
+            <a href="${escapeHtml(featured.repoUrl)}" class="btn-primary" target="_blank" rel="noopener noreferrer">
+              <span>View Source on GitHub</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            ${featured.demoUrl ? `
+              <a href="${escapeHtml(featured.demoUrl)}" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                <span>Live Demonstration</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
             ` : ''}
           </div>
         </div>
-      </div>
-    </article>
-  `;
+      </article>
+    `;
+  } else if (featuredContainer) {
+    featuredContainer.style.display = 'none';
+    featuredContainer.innerHTML = '';
+  }
 
-  // Render Regular Projects Grid
+  // Render Projects Grid
   gridContainer.innerHTML = regularProjects.map(proj => `
     <article class="project-card reveal">
       <div>
@@ -302,7 +278,7 @@ async function loadGitHubProjects() {
     if (Array.isArray(repos) && repos.length > 0) {
       // Find extra notable non-fork repos with meaningful content
       const additionalRepos = repos
-        .filter(r => !r.fork && !['hello-word', 'hi', 'demo', 'khfsg'].includes(r.name.toLowerCase()))
+        .filter(r => !r.fork && !['hello-word', 'hi', 'demo', 'khfsg', 'go-green'].includes(r.name.toLowerCase()))
         .map(r => ({
           name: formatRepoName(r.name),
           isFeatured: false,

@@ -1159,8 +1159,8 @@ button {
 /* --- Toolkit / Skills Section --- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(1.5rem, 4vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .skill-category {
@@ -1207,6 +1207,11 @@ button {
 .skill-badge.learning {
   background: #FFF4E5;
   color: #B25E00;
+}
+
+.skill-badge.planned {
+  background: #EEF2FF;
+  color: #4338CA;
 }
 
 .skill-list {
